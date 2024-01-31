@@ -1,5 +1,70 @@
 # rtd.py 
+import random
 
+# Dice
+dice_art = {
+  1: (
+        "┌─────────┐",
+        "│         │",
+        "│    ●    │",
+        "│         │",
+        "└─────────┘",
+    ),
+    2: (
+        "┌─────────┐",
+        "│  ●      │",
+        "│         │",
+        "│      ●  │",
+        "└─────────┘",
+    ),
+    3: (
+        "┌─────────┐",
+        "│  ●      │",
+        "│    ●    │",
+        "│      ●  │",
+        "└─────────┘",
+    ),
+    4: (
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│         │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+    5: (
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│    ●    │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+    6: (
+        "┌─────────┐",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "│  ●   ●  │",
+        "└─────────┘",
+    ),
+}
+die_height = len(dice_art[1])
+die_width = len(dice_art[1] [0])
+die_face_separator = " "    
+
+def generate_dice_faces_diagram(dice_values):
+  """Return a diagram of dice faces from 'dice_values'.
+
+  The string returned contains a representation of each die.
+  For example, if 'dice_values = [4 , 1 , 3 , 2]' then the string should look likes this:
+  ~~~~~~~~~~~~~~~~~~~ RESULTS ~~~~~~~~~~~~~~~~~~~
+    ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌─────────┐
+    │  ●   ●  │ │         │ │  ●      │ │  ●      │
+    │         │ │    ●    │ │    ●    │ │         │
+    │  ●   ●  │ │         │ │      ●  │ │      ●  │
+    └─────────┘ └─────────┘ └─────────┘ └─────────┘
+    """
+  
+
+# . . .
 def parse_input(input_string):
   """Return 'input_string as an integer between 1 and 6.
 
@@ -17,6 +82,9 @@ def parse_input(input_string):
 num_dice_input = input("How many die? [1-6]")
 num_dice = parse_input(num-dice_input)
 
+#2 Task 2: Roll the dice
+roll_results = roll_dice(num_dice)
+print(roll_results) #REMOVE THIS LINE AFTER APP TEST
 
 # Dice Code
 # Task 1: import die.
